@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Undangan Pernikahan</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Imperial+Script&display=swap" rel="stylesheet"/>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inika:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body class="lock-scroll">
+  <div class="background"></div>
+
+  <div class="object-daun">
+    <img src="assets/Object-1.png" class="daun-kiri"/>
+    <img src="assets/Object-1-right.png" class="daun-kanan"/>
+  </div>  
+
+  <div class="object-bunga">
+    <img src="assets/Object-7.png" class="bunga-kiri"/>
+    <img src="assets/Object-7-right.png" class="bunga-kanan"/>  
+  </div>
+
+    <div class="container-all">
+    <div class="opening">
+        <div class="gambar-opening">
+            <img src="assets/img/prewed1.jpeg" alt="Foto Prewed"/>
+        </div>
+        <p class="judul-opening">Undangan Pernikahan</p>
+        <p style="font-size: 40px; margin-top: 35px; text-align: center; animation: fadeIn 1s ease-in-out forwards;">Adi<br>&<br>Ani</p>
+        
+        <p style="margin-top: 13vh;" class="yth" id="ucapan">Yth.
+        </p>
+        <p style="margin-bottom: 20px;" id="namaTamu">Nama Tamu</p>
+
+        <a href="#quote" class="btn" id="btnBuka" onclick="tampilkanNavbar()">Buka Undangan</a>
+
+    <script>
+      function tampilkanNavbar() {
+        document.body.classList.remove("lock-scroll");
+
+        document.getElementById('quote')?.scrollIntoView({ behavior: 'smooth' });
+
+        document.querySelector('.image-navbar')?.classList.remove('hidden');
+        document.querySelector('.music-player')?.classList.remove('hidden');
+        document.getElementById("audio")?.play();
+
+        document.getElementById('ucapan')?.remove();
+        document.getElementById('namaTamu')?.remove();
+        document.getElementById('btnBuka')?.remove();
+    }
+    </script>
+
+    </div>
+
+    <div id="quote">
+      <div class="quote-container">
+        <img src="assets/img/wMf1Oen9.jpg" alt="" class="mempelai-quote">
+        <p class="quote-text">"dan di antara tanda-tanda (kebesaran)-Nya ialah Dia menciptakan pasangan-pasangan untukmu dari jenismu sendiri, agar kamu cenderung dan merasa tenteram kepadanya, dan Dia menjadikan diantaramu rasa kasih dan sayang. Sungguh, pada yang demikian itu benar-benar terdapat tanda-tanda (kebesaran Allah) bagi kaum yang berpikir."</p>
+        <p class="quote-author">Surah Ar-Rum ayat 21</p>
+        <div class="tumbuhan-quote">
+          <img src="assets/Object-3-left.png" class="bunga-hiasan-kiri" alt="">
+          <img src="assets/Object-3.png" class="bunga-hiasan-kanan" alt="">
+        </div>
+      </div>
+      
+    </div>
+
+    <div id="pengantin-page">
+      <h2 class="judul-awal">Mempelai</h2>
+        <div class="container-pengantin">
+            <div class="pengantin-laki pengantin">
+              <img src="assets/img/tyRx6ksX-groom.jpg" alt="">
+              <p class="nama">Muhammad Adi</p>
+              <p class="isi">Putra pertama dari pasangan Bapak Fulan Ibu Fulanah</p>
+            </div>
+            <div class="pengantin-perempuan pengantin">
+              <img src="assets/img/tyRx6ksX.jpg" alt="">
+              <p class="nama">Putri Ani</p>
+              <p class="isi">Putri pertama dari pasangan Bapak Fulan Ibu Fulanah</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="acara">
+      <div class="akad">
+        <p class="judul-awal">Akad nikah</p>
+        <p class="isi-acara">Akad nikah akan dilaksanakan pada tanggal<br><u>Minggu, 12 Desember 2024</u><br>di Gedung Sultan Suriansyah<br><br><b>Waktu acara:</b><br>08:00 s.d. 09.00 Wita</p>
+      </div>
+
+      <div class="resepsi">
+        <p class="judul-awal">Resepsi</p>
+        <p class="isi-acara">Acara resepsi akan segera dilaksanakan pada<br><u>Minggu, 12 Desember 2024</u><br>di Gedung Sultan Suriansyah<br><br><b>Waktu acara:</b><br>10:00 s.d. 13.00 Wita</p>
+      </div>
+
+      <p class="judul-awal">Countdown</p>
+
+      <div class="container-countdown">
+        <div class="countdown">
+          <div class="time" id="hari">00<br> <span>Hari</span></div>
+          <div class="time" id="jam">00<br> <span>Jam</span></div>
+          <div class="time" id="menit">00<br> <span>Menit</span></div>
+          <div class="time" id="detik">00<br> <span>Detik</span></div>
+        </div>
+      </div>
+
+      <script>
+        let tanggalPernikahan = new Date("Dec 14, 2036 00:00:00").getTime();
+          let x = setInterval(function() {
+
+          let sekarang = new Date().getTime();
+
+          let selisih = tanggalPernikahan - sekarang;
+
+          let hari = Math.floor(selisih / (1000 * 60 * 60 * 24));
+          let jam = Math.floor((selisih % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+          let menit = Math.floor((selisih % (1000 * 60 * 60)) / (1000 * 60));
+          let detik = Math.floor((selisih % (1000 * 60)) / 1000);
+
+          document.getElementById("hari").innerHTML = hari + " <span>Hari</span>";
+          document.getElementById("jam").innerHTML = jam + " <span>Jam</span>";
+          document.getElementById("menit").innerHTML = menit + " <span>Menit</span>";
+          document.getElementById("detik").innerHTML = detik + " <span>Detik</span>";
+
+          if (selisih < 0) {
+            clearInterval(x);
+            document.getElementById("hari").innerHTML = "0 <span>Hari</span>";
+            document.getElementById("jam").innerHTML = "0 <span>Jam</span>";
+            document.getElementById("menit").innerHTML = "0 <span>Menit</span>";
+            document.getElementById("detik").innerHTML = "0 <span>Detik</span>";
+          }
+        }, 1000);
+      </script>
+    </div>
+
+    <div id="maps" style="display: flex; align-items: center; flex-direction: column; padding: 20px; background-color: #F1EFEC;">
+      <h2 class="judul-awal">Lokasi</h2>
+
+      <iframe class="maps" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3983.2067760479454!2d114.59046166908304!3d-3.29892556834538!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2de423a3fb5f2659%3A0x75f1cc80aad78356!2sGedung%20Sultan%20Suriansyah!5e0!3m2!1sen!2sid!4v1748924905309!5m2!1sen!2sid" width="300" height="250" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      <p style="text-align: center; margin-top: 20px;">Jl. Brig Jend. Hasan Basri, Sungai Miai, Kec. Banjarmasin Utara, Kota Banjarmasin, Kalimantan Selatan 70123</p>
+
+      <div class="bunga-lokasi">
+        <img src="assets/Object-2-left.png" class="bunga-kiri" alt="">
+        <img src="assets/Object-2.png" class="bunga-kanan" alt="">
+      </div>
+    </div>
+
+    <div id="galeri" style="background-color: #b8bdc6;padding: 20px;">
+      <h2 class="judul-awal" style="text-align: center">Galeri</h2>
+
+      <div class="foto-container" style="animation: fadeIn 1s forwards;">
+        <div class="container">
+
+          <div class="mySlides">
+            <div class="numbertext">1 / 6</div>
+              <img src="assets/img/prewed1.jpeg" class="gambar">
+          </div>
+        
+          <div class="mySlides">
+            <div class="numbertext">2 / 5=6</div>
+              <img src="assets/img/prewed2.jpeg" class="gambar">
+          </div>
+        
+          <div class="mySlides">
+            <div class="numbertext">3 / 6</div>
+              <img src="assets/img/prewed3.jpg" class="gambar">
+          </div>
+        
+          <div class="mySlides">
+            <div class="numbertext">4 / 6</div>
+              <img src="assets/img/prewed4.jpeg" class="gambar">
+          </div>
+
+          <div class="mySlides">
+            <div class="numbertext">5 / 6</div>
+              <img src="assets/img/prewed5.jpeg" class="gambar">
+          </div>
+
+          <div class="mySlides">
+            <div class="numbertext">6 / 6</div>
+              <img src="assets/img/prewed6.jpg" class="gambar">
+          </div>
+        
+          <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+          <a class="next" onclick="plusSlides(1)">&#10095;</a>
+        
+          <div class="caption-container">
+            <p id="caption"></p>
+          </div>
+        
+          <div class="row">
+            <div class="column">
+              <img class="demo cursor" src="assets/img/prewed1.jpeg" style="width:100%; height: 70px;" onclick="currentSlide(1)" class="foto-preview" alt="Foto Prewed di Gunung Bromo">
+            </div>
+            <div class="column">
+              <img class="demo cursor" src="assets/img/prewed2.jpeg" style="width:100%; height: 70px;" onclick="currentSlide(2)" class="foto-preview" alt="Foto Prewed di Gunung Bromo">
+            </div>
+            <div class="column">
+              <img class="demo cursor" src="assets/img/prewed3.jpg" style="width:100%; height: 70px;" onclick="currentSlide(3)" class="foto-preview" alt="Foto Prewed di pantai">
+            </div>
+            <div class="column">
+              <img class="demo cursor" src="assets/img/prewed4.jpeg" style="width:100%; height: 70px;" onclick="currentSlide(4)" alt="Foto Prewed di gedung XX">
+            </div>
+            <div class="column">
+              <img class="demo cursor" src="assets/img/prewed5.jpeg" style="width:100%; height: 70px;" onclick="currentSlide(5)" alt="Foto Prewed di alam">
+            </div>
+            <div class="column">
+              <img class="demo cursor" src="assets/img/prewed6.jpg" style="width:100%; height: 70px;" onclick="currentSlide(6)" alt="Foto Prewed di alam">
+            </div>
+          </div>
+        </div>
+      </div>
+
+    <script>
+      let slideIndex = 1;
+      showSlides(slideIndex);
+
+      function plusSlides(n) {
+        showSlides(slideIndex += n);
+      }
+
+      function currentSlide(n) {
+        showSlides(slideIndex = n);
+      }
+
+      function showSlides(n) {
+        let i;
+        let slides = document.getElementsByClassName("mySlides");
+        let dots = document.getElementsByClassName("demo");
+        let captionText = document.getElementById("caption");
+        if (n > slides.length) {slideIndex = 1}
+        if (n < 1) {slideIndex = slides.length}
+        for (i = 0; i < slides.length; i++) {
+          slides[i].style.display = "none";
+        }
+        for (i = 0; i < dots.length; i++) {
+          dots[i].className = dots[i].className.replace(" active", "");
+        }
+        slides[slideIndex-1].style.display = "block";
+        dots[slideIndex-1].className += " active";
+        captionText.innerHTML = dots[slideIndex-1].alt;
+      } 
+    </script>
+
+    <div id="myModal" class="modal">
+      <span class="close">&times;</span>
+      <img class="modal-content" id="img01">
+    </div>
+
+    <script>
+      var modal = document.getElementById('myModal');
+      var images = document.getElementsByClassName('gambar');
+      var modalImg = document.getElementById("img01");
+
+      for (var i = 0; i < images.length; i++) {
+        var img = images[i];
+        img.onclick = function(evt) {
+          modal.style.display = "block";
+          modalImg.src = this.src;
+        }
+      }
+
+      var span = document.getElementsByClassName("close")[0];
+
+      span.onclick = function() {
+        modal.style.display = "none";
+      }
+    </script>
+    </div>
+
+    <div id="rsvp" style="background-color: #BFCFE7;padding: 20px;">
+      <h2 class="judul-awal" style="text-align: center;">Rsvp</h2>
+      <div class="container-rsvp">
+      <h2>RSVP</h2>
+      <form id="rsvpForm">
+        <input type="hidden" id="id" name="id"/>
+        <label for="name">Nama:</label>
+        <input type="text" id="name" name="name" required><br><br>
+
+        <label for="jumlah">Jumlah tamu:</label>
+        <input type="number" id="jumlah" name="jumlah" required><br><br>
+
+        <label for="attendance">Kehadiran:</label>
+        <select id="attendance" name="attendance" required>
+        <option value="hadir">Hadir</option>
+        <option value="tidak_hadir">Tidak Hadir</option>
+        </select><br><br>
+
+        <button type="submit" class="submit">Kirim</button>
+      </form>
+      <div id="rsvpTable"></div>
+      </div>
+
+      <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const form = document.getElementById('rsvpForm');
+      form.addEventListener('submit', function (e) {
+      e.preventDefault();
+
+      const id = document.getElementById('id').value;
+      const name = document.getElementById('name').value;
+      const jumlah = document.getElementById('jumlah').value;
+      const attendance = document.getElementById('attendance').value;
+
+      if (!name || !jumlah || !attendance) {
+        alert("Mohon lengkapi semua field!");
+        return;
+      }
+
+      fetch("php/submit_rsvp.php", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/x-www-form-urlencoded"
+        },
+        body: `id=${encodeURIComponent(id)}&name=${encodeURIComponent(name)}&jumlah=${encodeURIComponent(jumlah)}&attendance=${encodeURIComponent(attendance)}`
+      })
+      .then(() => {
+        alert("Data berhasil disimpan!");
+        tampilkanTamu();
+        form.reset();
+        document.getElementById("id").value = "";
+      })
+      .catch(err => console.error("Gagal kirim data:", err));
+    });
+
+    tampilkanTamu();
+  });
+
+  function tampilkanTamu() {
+    fetch("php/get_rsvp.php")
+      .then(res => res.text())
+      .then(data => {
+        document.getElementById("rsvpTable").innerHTML = data;
+      })
+      .catch(err => console.error("Gagal load data:", err));
+  }
+</script>
+
+    </div>
+    <div id="penutup"> 
+      <p class="judul-awal">Thank you</p>
+
+      <div class="penutup-pengantin1">
+        <p class="kalimat" style="opacity: 0; animation: fadeIn 1s forwards; animation-delay: 2s;">Demikian kami sampaikan undangan kami. Kami mengharapkan kehadiran anda.</p>
+      </div>
+
+      <div><p>Sincerely,</p></div>
+
+      <div class="penutup">
+        <div class="nama-penutup" style="opacity: 0; animation: moveLeftToRight 3s forwards; animation-delay: 3s;"><p>Adi</div>
+
+        <div class="dan" style="opacity: 0; font-size: 80px; font-weight: bold; animation: fadeIn 1s forwards; animation-delay: 3s;">&</div>
+
+        <div class="nama-penutup" style="opacity: 0; animation: moveRightToLeft 3s forwards; animation-delay: 3s;"><p>Ani</p></div>
+      </div>
+
+      <p class="pita" style="font-size: 50px; margin-top: 50px; color: #e2398b;">──── ୨୧ ────</p>
+    </div>
+
+    <nav class="image-navbar hidden" id="image-navbar">
+    <a href="#quote" class="nav-link" data-section="quote">
+      <img src="assets/🦆 icon _book open_.svg" alt="Quote" class="nav-icon"
+        data-icon="assets/🦆 icon _book open_.svg"
+        data-icon-active="assets/🦆 icon _book open_active.svg"/>
+    </a>
+    <a href="#pengantin-page" class="nav-link" data-section="pengantin-page">
+      <img src="assets/PersonFill.svg" alt="Pengantin" class="nav-icon"
+        data-icon="assets/PersonFill.svg"
+        data-icon-active="assets/PersonFill_active.svg"/>
+    </a>
+    <a href="#acara" class="nav-link" data-section="acara">
+      <img src="assets/CalendarOutline.svg" alt="Acara" class="nav-icon"
+        data-icon="assets/CalendarOutline.svg"
+        data-icon-active="assets/CalendarOutline_active.svg"/>
+    </a>
+    <a href="#maps" class="nav-link" data-section="maps">
+      <img src="assets/LocationMarker.svg" alt="Lokasi" class="nav-icon"
+        data-icon="assets/LocationMarker.svg"
+        data-icon-active="assets/LocationMarker_active.svg"/>
+    </a>
+    <a href="#galeri" class="nav-link" data-section="galeri">
+      <img src="assets/🦆 icon _camera_.svg" alt="Galeri" class="nav-icon"
+        data-icon="assets/🦆 icon _camera_.svg"
+        data-icon-active="assets/🦆 icon _camera_active.svg"/>
+    </a>
+    <a href="#rsvp" class="nav-link" data-section="rsvp">
+      <img src="assets/Group 9.svg" alt="RSVP" class="nav-icon"
+        data-icon="assets/Group 9.svg"
+        data-icon-active="assets/Group 10_active.svg"/>
+    </a>
+    <a href="#penutup" class="nav-link" data-section="penutup">
+    <img src="assets/🦆 icon _bookmark_.svg" alt="Penutup" class="nav-icon"
+      data-icon="assets/🦆 icon _bookmark_.svg"
+      data-icon-active="assets/🦆 icon _bookmark_active.svg"/>
+    </a>
+    </nav>
+    <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const sections = document.querySelectorAll("#quote, #pengantin-page, #acara, #maps, #galeri, #rsvp, #penutup");
+
+      const navLinks = document.querySelectorAll(".image-navbar .nav-link");
+
+      function toggleNavbarVisibility() {
+      const scrollTop = window.scrollY;
+      if (scrollTop > 200) {
+        navbar.classList.remove("hidden");
+      } else {
+        navbar.classList.add("hidden");
+        }
+      }
+      function setActiveIcon() {
+        let currentSection = null;
+        sections.forEach((section) => {
+          const rect = section.getBoundingClientRect();
+          if (rect.top <= 150 && rect.bottom >= 150) {
+            currentSection = section.id;
+          }
+        });
+
+        navLinks.forEach((link) => {
+          const img = link.querySelector("img");
+          if (link.dataset.section === currentSection) {
+            link.classList.add("active");
+            img.src = img.dataset.iconActive;
+          } else {
+            link.classList.remove("active");
+            img.src = img.dataset.icon;
+          }
+        });
+      }
+
+      window.addEventListener("scroll", setActiveIcon);
+      window.addEventListener("load", setActiveIcon);
+    });
+  </script>
+
+  <div class="music-player hidden">
+  <audio id="audio" src="assets/music/Maher Zain.mp3" loop></audio>
+  <button id="playPauseBtn" onclick="togglePlay()">
+    ⏸️
+  </button>
+</div>
+
+  <script>
+    const audio = document.getElementById('audio');
+    const playPauseBtn = document.getElementById('playPauseBtn');
+
+    function togglePlay() {
+      if (audio.paused) {
+      audio.play();
+      playPauseBtn.textContent = '⏸️';
+      } else {
+      audio.pause();
+      playPauseBtn.textContent = '▶️';
+      }
+    }
+
+  </script>
+    </div>
+</body>
+</html>
